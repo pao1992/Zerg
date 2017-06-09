@@ -24,7 +24,6 @@ return [
         'http://192.168.1.107:8088',
         'http://192.168.1.108:8088',
         'http://192.168.1.109:8088',
-        'http://192.168.1.110:8088',
         'http://infasion.iok.la',
         'http://localhost',
         'http://listudio.cn',
