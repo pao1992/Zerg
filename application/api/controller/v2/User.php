@@ -12,7 +12,6 @@ namespace app\api\controller\v2;
 
 
 use app\api\controller\BaseController;
-use app\api\validate\BaseValidate;
 use app\api\validate\UserNew;
 use app\api\model\User as UserModel;
 use app\lib\exception\BaseException;
@@ -38,7 +37,7 @@ class User extends BaseController
     {
         //从session取出验证码
         $verify = session('verify');
-        echo 'verif'.$verify;die;
+        //这时候session应该怎么取出，需要标识
         $verify = 1102;
         //验证user
         $validate = new UserNew();
