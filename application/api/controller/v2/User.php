@@ -35,11 +35,12 @@ class User extends BaseController
 
     public function createOne()
     {
-        //从session取出验证码
+        //从session取出验证码,储存在哪
         $verify = session('verify');
         //这时候session应该怎么取出，需要标识
         $verify = 1102;
-        //验证user
+        echo $verify;
+        //验证user是否
         $validate = new UserNew();
         $validate->goCheck();
         $data = $validate->getDataByRule(input('post.'));
