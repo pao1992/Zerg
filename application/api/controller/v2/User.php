@@ -36,22 +36,21 @@ class User extends BaseController
     public function createOne()
     {
         //从session取出验证码,储存在哪
-        $verify = session('verify');
-        //这时候session应该怎么取出，需要标识
-        $verify = 1102;
-        echo $verify;
+        $verifyCode = session('verifyCode');
         //验证user是否
         $validate = new UserNew();
         $validate->goCheck();
         $data = $validate->getDataByRule(input('post.'));
         //验证验证码是否一致
-        if ($data['verify'] != $verify) throw new VerifyException();
-        unset($data['verify']);
+        if ($data['verifyCode'] != $verifyCode) throw new VerifyException();
+        unset($data['verifyCode']);
         $user = UserModel::createOne($data);
         if (!$user) {
             throw New BaseException();
         }
-        return $user;
+        throw new SuccessMessage([
+            'msg'=>'用户创建成功！',
+        ]);
     }
 
     public function getVerifyCode($tel)
@@ -60,10 +59,19 @@ class User extends BaseController
         if(!preg_match('/^1[34578]\d{9}$/',$tel)){
             throw new ParameterException(['msg'=>'电话号码错误！']);
         }
-        $result = UserSevice::getVerifyCode($tel);
-        if($result !== true){
-            return new SuccessMessage();
+        $user = UserModel::where('tel',$tel)->find();
+        if($user){
+            throw new BaseException([
+                'code'=>400,
+                'msg'=>'手机号已被注册！',
+                'errorCode'=>10007,
+            ]);
         }
-        throw new ErrorException();
+        $result = UserSevice::getVerifyCode($tel);
+        return $result;
+//        if($result !== true){
+//            return new SuccessMessage();
+//        }
+//        throw new ErrorException();
     }
 }
