@@ -13,9 +13,9 @@ return [
     //  微信相关配置
     //  +---------------------------------
 
-    // 公众号app_id
+    // 小程序app_id
     'app_id' => 'wx0646ce2a8a052cfb',
-    // 公众号app_secret
+    // 小程序app_secret
     'app_secret' => '15fc45ded73243123f0b1dfe94b9c527',
     //微信获取code跳转后的回调地址
     'author_url'=>'http://www.listudio.cn/#/author',

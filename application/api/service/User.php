@@ -36,7 +36,6 @@ class User
             $code .= $arr[rand(0, 9)];
         }
         session('verifyCode', $code);
-        echo session('verifyCode');
         //发送阿里大于
 //        $Send = new Send();
 //        $result = $Send->sms([

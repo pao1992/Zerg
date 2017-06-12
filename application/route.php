@@ -95,7 +95,7 @@ Route::post('api/:version/userCoupon/check', 'api/:version.UserCoupon/check',[],
 //user
 Route::get('api/:version/user', 'api/:version.User/getUser');
 Route::post('api/:version/user', 'api/:version.User/createOne');
-Route::post('api/:version/user/verify_code', 'api/:version.User/getVerifyCode');
+Route::get('api/:version/user/verify_code', 'api/:version.User/getVerifyCode');
 
 
 
