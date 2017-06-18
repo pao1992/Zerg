@@ -10,6 +10,10 @@
 // 写完代码后对着路由表看，能否不看注释就知道这个接口的意义
 use think\Route;
 
+//test
+Route::get('api/:version/test', 'api/:version.Test/test');
+
+
 //Sample
 Route::get('api/:version/sample/:key', 'api/:version.Sample/getSample');
 Route::post('api/:version/sample/test3', 'api/:version.Sample/test3');
@@ -96,10 +100,7 @@ Route::post('api/:version/userCoupon/check', 'api/:version.UserCoupon/check',[],
 Route::get('api/:version/user', 'api/:version.User/getUser');
 Route::post('api/:version/user', 'api/:version.User/createOne');
 Route::post('api/:version/user/verify_code', 'api/:version.User/getVerifyCode');
-
-
-
-
+Route::post('api/:version/user/login', 'api/:version.User/login');
 
 //Pay
 Route::post('api/:version/pay/pre_order', 'api/:version.Pay/getPreOrder');
