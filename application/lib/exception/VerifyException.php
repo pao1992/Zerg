@@ -13,7 +13,7 @@ namespace app\lib\exception;
 
 class VerifyException extends BaseException
 {
-    public $code = 400;
+    public $code = 200;
     public $msg = '验证码错误！';
     public $errorCode = 10006;
 }

@@ -20,6 +20,6 @@ class UserNew extends BaseValidate
     protected $rule = [
         'tel' => 'require|isNotEmpty',
         'password' => 'require|isNotEmpty',
-        'verify' => 'require|isNotEmpty'
+        'verifyCode' => 'require|isNotEmpty'
     ];
 }

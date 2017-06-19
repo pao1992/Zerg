@@ -15,8 +15,6 @@ use app\api\service\UserToken;
 use app\api\service\Token as TokenService;
 use app\api\validate\AppTokenGet;
 use app\api\validate\TokenGet;
-use app\lib\exception\SuccessMessage;
-use app\lib\exception\ParameterException;
 use think\Controller;
 /**
  * 获取令牌，相当于登录

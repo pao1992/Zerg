@@ -9,21 +9,7 @@
  */
 
 namespace app\api\service;
-
-
-use think\Exception;
-use app\api\controller\BaseController;
-use app\api\validate\BaseValidate;
-use app\api\validate\UserNew;
-use app\api\model\User as UserModel;
-use app\lib\exception\BaseException;
-use app\lib\exception\ParameterException;
-use app\lib\exception\SuccessMessage;
-use app\lib\exception\VerifyException;
-use think\Db;
-use app\api\service\Token;
 use app\api\model\Send;
-use think\exception\ErrorException;
 
 class User
 {
@@ -43,6 +29,8 @@ class User
 //            'mobile'  => $tel,
 //            'template'  => config('alidayu.regTemplate')
 //        ]);
-//        return $result;
+        //测试用
+        return $code;
+        return $result;
     }
 }
